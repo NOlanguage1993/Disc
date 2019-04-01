@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>仪表盘</title>
+    <style>
+    </style>
+    <script type="text/javascript" src="../lib/disc.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<canvas id="dashborad" class="graph-pie" width="129" height="84" style="width: 129px; height: 84px;"></canvas>
+<script type="text/javascript">
+     $(function () {
+        var pieEle = document.getElementById("dashborad");
+        var width = pieEle.width;
+        var height = pieEle.height;
+        var outRadius = 56;
+        var outMaskRadius = 52;
+        var innerRadius = 48;
+        var innerMaskRadius = 34;
+
+        var disc = new Disc(pieEle, {
+            arcCenter: [width / 2, outRadius],
+            outRadius: outRadius,
+            outArcData: [[0.6, "#03c342"], [0.3, "#fc9801"], [0.1, "#e81f1f"]],
+            outMaskScale: outMaskRadius / outRadius,
+            innerRadius: innerRadius,
+            innerMaskScale: innerMaskRadius / outRadius,
+            startRad: 5 * Math.PI / 6,
+            endRad: Math.PI / 6,
+            innerArcData: [[1, "rgba(0,0,0,0.3)"]],
+            animation: true,
+        })
+        disc.draw(0.35)
+     });
+</script>
+</body>
+
+</html>
