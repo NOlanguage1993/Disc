@@ -17,4 +17,4 @@
     step: 步长 取值0 ~ 1之前 值越大动画越快
     anmiation: 动画，
     
-    by test beckwu
+
